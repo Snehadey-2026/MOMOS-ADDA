@@ -7,6 +7,9 @@ import { config } from "dotenv";
 import { v4 as uuidv4 } from "uuid";
 import path from "path";
 import { fileURLToPath } from "url";
+import mongoose from "mongoose";
+const { connect, connection, Schema, model } = mongoose;
+
 
 config();
 
@@ -38,8 +41,7 @@ connect(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .catch((err) => console.error("MongoDB connection error:", err));
 
 // --- Schemas & Models ---
-import mongoose from "mongoose";
-const { connect, connection, Schema, model } = mongoose;
+
 
 const menuItemSchema = new Schema({
   id: { type: String, default: uuidv4 },

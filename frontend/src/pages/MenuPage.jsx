@@ -17,7 +17,8 @@ const MenuPage = () => {
   // ================================
   const fetchMenu = async () => {
     try {
-      const response = await axios.get(API_URL, {
+      const response = await axios.get("https://momosaddaindia.com/api/menu",
+ {
         headers: { "Content-Type": "application/json" },
       });
       setMenuItems(response.data || []);

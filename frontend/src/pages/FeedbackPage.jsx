@@ -43,7 +43,8 @@ const FeedbackPage = () => {
     setIsSubmitting(true);
 
     try {
-      await axios.post(`${API}/feedback`, formData, {
+     await axios.post("https://momosaddaindia.com/api/feedback", formData,
+{
         headers: { "Content-Type": "application/json" },
       });
 

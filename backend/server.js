@@ -15,22 +15,10 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
-// Allow CORS for dev origin and optionally production origin
-// For development allow localhost:3000, in production set your real origin
 app.use(
   cors({
-    origin: (origin, cb) => {
-      // Allow no-origin requests (curl, mobile) and localhost dev
-      const allowed = [
-        "http://localhost:3000",          // your frontend dev
-        "http://127.0.0.1:3000",
-        "https://momosaddaindia.com",     // your production origin (if used)
-      ];
-      if (!origin || allowed.includes(origin)) return cb(null, true);
-      cb(new Error("CORS not allowed"));
-    },
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    credentials: true,
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
 
@@ -51,7 +39,7 @@ connect(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
 
 // --- Schemas & Models ---
 import mongoose from "mongoose";
-const { Schema, model } = mongoose;
+const { connect, connection, Schema, model } = mongoose;
 
 const menuItemSchema = new Schema({
   id: { type: String, default: uuidv4 },

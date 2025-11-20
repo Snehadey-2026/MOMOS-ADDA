@@ -31,12 +31,17 @@ const FranchisePage = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await axios.post(`${API_BASE}/franchise`, formData, {
-        headers: { "Content-Type": "application/json" },
-      });
+     const API_BASE = import.meta.env.VITE_API_BASE;
 
-      console.log("Franchise Submitted:", response.data);
-      toast.success("Your franchise inquiry has been submitted!");
+const response = await axios.post("https://momosaddaindia.com/api/franchise", formData,
+
+    {
+        headers: { "Content-Type": "application/json" }
+    }
+);
+
+console.log("Franchise Submitted:", response.data);
+alert("Your franchise inquiry has been submitted!");
 
       // Reset form
       setFormData({

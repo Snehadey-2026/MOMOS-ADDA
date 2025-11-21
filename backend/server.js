@@ -1,15 +1,14 @@
 // server.js (ESM)
 import express from "express";
 import { json } from "express";
-
 import cors from "cors";
 import { config } from "dotenv";
 import { v4 as uuidv4 } from "uuid";
 import path from "path";
 import { fileURLToPath } from "url";
 import mongoose from "mongoose";
-const { connect, connection, Schema, model } = mongoose;
 
+const { connect, connection, Schema, model } = mongoose;
 
 config();
 

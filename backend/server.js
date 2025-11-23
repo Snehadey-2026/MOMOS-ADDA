@@ -17,15 +17,20 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
+// -------------------- FIXED CORS --------------------
 app.use(
   cors({
-    origin: "*",
+    origin: [
+      "http://localhost:3000",
+      "https://momosaddaindia.com",
+      "https://www.momosaddaindia.com",
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
   })
 );
-
-// Also respond to preflight explicitly (safe)
 app.options("*", cors());
+// ----------------------------------------------------
 
 // Body parser
 app.use(json());
@@ -40,8 +45,6 @@ connect(MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .catch((err) => console.error("MongoDB connection error:", err));
 
 // --- Schemas & Models ---
-
-
 const menuItemSchema = new Schema({
   id: { type: String, default: uuidv4 },
   name: String,
@@ -143,7 +146,7 @@ router.get("/feedback", async (_req, res) => {
   }
 });
 
-// Mount router under /api (recommended)
+// Mount router under /api
 app.use("/api", router);
 
 // Generic error handler

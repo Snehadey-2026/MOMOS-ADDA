@@ -165,7 +165,7 @@ const cardDesc = {
 const ctaSectionStyle = {
   padding: "60px 20px",
   textAlign: "center",
-  backgroundColor: "#ff4d4d",
+  backgroundColor: " #F97316 100%",
   color: "#fff",
   marginTop: "40px",
 };

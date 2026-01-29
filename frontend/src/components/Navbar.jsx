@@ -52,18 +52,25 @@ return (
     >
       {/* Logo */}
       <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 'clamp(8px, 1.5vw, 12px)' }}>
          <img
   src="/AssetsMomosAdda/finallogo.jpg"
   alt="Momo's Adda"
-  style={{ height: '80px', width: '50px' }}
+  style={{ 
+    height: 'clamp(50px, 10vw, 80px)', 
+    width: 'auto',
+    maxWidth: '60px',
+    maxHeight: '80px',
+    objectFit: 'contain'
+  }}
 />
           <span
             style={{
               fontFamily: 'Copper Black, serif',
-              fontSize: '30px',
+              fontSize: 'clamp(18px, 4vw, 30px)',
               fontWeight: '800',
               color: '#FDC500',
+              whiteSpace: 'nowrap',
             }}
           >
             MOMO'S ADDA
@@ -72,7 +79,7 @@ return (
       </Link>
 
       {/* Desktop Navigation */}
-      <div style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
+      <div className="desktop-nav" style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
         {navLinks.map((link) => (
           <Link
             key={link.path}
@@ -80,10 +87,11 @@ return (
             style={{
               textDecoration: 'none',
               fontFamily: 'Manrope, sans-serif',
-              fontSize: '15px',
+              fontSize: 'clamp(13px, 1.5vw, 15px)',
               fontWeight: '600',
               color: location.pathname === link.path ? '#FDC500' : 'white',
               transition: 'color 0.3s ease',
+              whiteSpace: 'nowrap',
             }}
             onMouseEnter={(e) => (e.target.style.color = '#FDC500')}
             onMouseLeave={(e) =>
@@ -95,43 +103,42 @@ return (
           </Link>
         ))}
       </div>
+
+      {/* Mobile Menu Button */}
+      <button
+        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        data-testid="mobile-menu-button"
+        className="mobile-menu-btn"
+        style={{
+          background: 'none',
+          border: 'none',
+          cursor: 'pointer',
+          padding: '8px',
+          display: 'none',
+          alignItems: 'center',
+          justifyContent: 'center',
+          color: 'white',
+        }}
+      >
+        {isMobileMenuOpen ? (
+          <X size={28} color="white" />
+        ) : (
+          <Menu size={28} color="white" />
+        )}
+      </button>
     </div>
   </div>
-
-
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            data-testid="mobile-menu-button"
-            style={{
-              background: 'none',
-              border: 'none',
-              cursor: 'pointer',
-              padding: '8px',
-              display: 'none',
-            }}
-            className="mobile-menu-btn"
-          >
-            {isMobileMenuOpen ? (
-              <X size={28} color="#DC2626" />
-            ) : (
-              <Menu size={28} color="#DC2626" />
-            )}
-          </button>
-        
-      
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div
           data-testid="mobile-menu"
+          className="mobile-menu"
           style={{
             background: 'white',
             padding: '20px',
             borderTop: '1px solid rgba(220, 38, 38, 0.1)',
           }}
-          className="mobile-menu"
         >
           {navLinks.map((link) => (
             <Link
@@ -157,17 +164,25 @@ return (
       )}
 
       <style>{`
-        @media (max-width: 768px) {
+        @media (max-width: 968px) {
           .desktop-nav {
             display: none !important;
           }
           .mobile-menu-btn {
-            display: block !important;
+            display: flex !important;
           }
         }
-        @media (min-width: 769px) {
+        @media (min-width: 969px) {
           .mobile-menu {
             display: none !important;
+          }
+          .mobile-menu-btn {
+            display: none !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .mobile-menu-btn {
+            padding: 6px;
           }
         }
       `}</style>

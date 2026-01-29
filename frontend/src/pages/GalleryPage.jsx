@@ -46,16 +46,22 @@ const GalleryPage = () => {
       {/* Hero Section */}
       <section
         data-testid="gallery-hero"
+        className="gallery-hero-section"
         style={{
           backgroundImage: 'url("/AssetsMomosAdda/GALLERY.png")',
-            width: "100%",
-    height: "100vh",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-              objectFit: "cover",
+          width: "100%",
+          minHeight: "100vh",
+          height: "100vh",
+          backgroundSize: "cover",
+          backgroundPosition: "center center",
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
           color: 'white',
           textAlign: 'center',
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          position: "relative",
         }}
       >
         <div className="container">
@@ -84,7 +90,9 @@ const GalleryPage = () => {
       </section>
 
       {/* Gallery Section */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ 
+        background: "linear-gradient(180deg, #FFFFFF 0%, #FAFAFA 50%, #FFFFFF 100%)",
+      }}>
         <div className="container">
           {/* Images Section */}
           <div style={{ marginBottom: '60px' }}>
@@ -97,12 +105,13 @@ const GalleryPage = () => {
                 marginBottom: '40px',
               }}
             >
-              <Image size={32} color="#DC2626" />
+              <Image size={32} color="#DC2626" style={{ flexShrink: 0, width: 'clamp(28px, 4vw, 32px)', height: 'clamp(28px, 4vw, 32px)' }} />
               <h2
                 style={{
                   fontFamily: 'Playfair Display, serif',
                   fontSize: 'clamp(28px, 4vw, 40px)',
                   fontWeight: '700',
+                  margin: 0,
                 }}
                 className="gradient-text"
               >
@@ -113,8 +122,8 @@ const GalleryPage = () => {
               data-testid="gallery-images-grid"
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-                gap: '24px',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(min(280px, 100%), 1fr))',
+                gap: 'clamp(20px, 3vw, 24px)',
               }}
             >
               {images.map((image, index) => (
@@ -139,7 +148,7 @@ const GalleryPage = () => {
                   <div
                     style={{
                       width: '100%',
-                      height: '280px',
+                      // height: 'clamp(220px, 35vw, 280px)',
                       overflow: 'hidden',
                     }}
                   >
@@ -149,21 +158,35 @@ const GalleryPage = () => {
                       style={{
                         width: '100%',
                         height: '100%',
+                        maxWidth: '100%',
+                        maxHeight: '100%',
                         objectFit: 'cover',
+                        objectPosition: 'center',
                         transition: 'transform 0.3s ease',
                       }}
-                      onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
-                      onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+                      onError={(e) => {
+                        e.target.style.opacity = '0.5';
+                        e.target.alt = 'Image not available';
+                      }}
+                      loading="lazy"
+                      onMouseEnter={(e) => {
+                        e.target.style.transform = 'scale(1.03)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.target.style.transform = 'scale(1)';
+                      }}
                     />
                   </div>
                   <div style={{ padding: '16px' }}>
                     <h3
                       style={{
                         fontFamily: 'Manrope, sans-serif',
-                        fontSize: '18px',
+                        fontSize: 'clamp(16px, 2.5vw, 18px)',
                         fontWeight: '600',
                         color: '#1F2937',
                         textAlign: 'center',
+                        wordBreak: 'break-word',
+                        margin: 0,
                       }}
                     >
                       {image.title}
@@ -185,12 +208,13 @@ const GalleryPage = () => {
                 marginBottom: '40px',
               }}
             >
-              <Video size={32} color="#DC2626" />
+              <Video size={32} color="#DC2626" style={{ flexShrink: 0, width: 'clamp(28px, 4vw, 32px)', height: 'clamp(28px, 4vw, 32px)' }} />
               <h2
                 style={{
                   fontFamily: 'Playfair Display, serif',
                   fontSize: 'clamp(28px, 4vw, 40px)',
                   fontWeight: '700',
+                  margin: 0,
                 }}
                 className="gradient-text"
               >
@@ -201,18 +225,19 @@ const GalleryPage = () => {
               data-testid="gallery-videos-placeholder"
               className="glass-card"
               style={{
-                padding: '60px 40px',
+                padding: 'clamp(40px, 8vw, 60px) clamp(24px, 5vw, 40px)',
                 textAlign: 'center',
               }}
             >
-              <Video size={64} color="#DC2626" style={{ margin: '0 auto 24px' }} />
+              <Video size={64} color="#DC2626" style={{ margin: '0 auto 24px', width: 'clamp(48px, 8vw, 64px)', height: 'clamp(48px, 8vw, 64px)' }} />
               <h3
                 style={{
                   fontFamily: 'Manrope, sans-serif',
-                  fontSize: '24px',
+                  fontSize: 'clamp(20px, 3vw, 24px)',
                   fontWeight: '600',
                   color: '#1F2937',
                   marginBottom: '12px',
+                  wordBreak: 'break-word',
                 }}
               >
                 Coming Soon!
@@ -220,8 +245,10 @@ const GalleryPage = () => {
               <p
                 style={{
                   fontFamily: 'Inter, sans-serif',
-                  fontSize: '16px',
+                  fontSize: 'clamp(14px, 2vw, 16px)',
                   color: '#6B7280',
+                  margin: 0,
+                  wordBreak: 'break-word',
                 }}
               >
                 Exciting video content will be added here soon. Stay tuned!

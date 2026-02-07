@@ -5,7 +5,7 @@ import "./HomePage.css"; // Import CSS
 
 const HomePage = () => {
   const slides = [
-    "/AssetsMomosAdda/slide1_4k.png",  // Fresh & Delicious
+    "/AssetsMomosAdda/1.jpg",  // Fresh & Delicious
     "/AssetsMomosAdda/NEWSLIDE1.jpg",  // Authentic Momos
     "/AssetsMomosAdda/3RDSLIDE.png",   // Signature Range
     "/AssetsMomosAdda/4THSLIDE.png",   // Taste the Explosion

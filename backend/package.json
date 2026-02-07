@@ -12,6 +12,7 @@
     "dotenv": "^16.x",
     "express": "^4.x",
     "mongoose": "^7.x",
+    "nodemailer": "^8.0.0",
     "uuid": "^9.0.1"
   },
   "devDependencies": {

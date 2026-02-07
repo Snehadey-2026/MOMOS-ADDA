@@ -37,7 +37,7 @@ const AboutPage = () => {
             </h2>
 
             <p className="story-text">
-             Momos Adda was founded in 2016 by Mr. Ishan Jamnani (Co-Founder), his wife Ms. Piu Bhattacharya Jamnani (Co-Founder), and Mr. Monjoy Bose (Co-Founder).
+             Momo's Adda was founded in 2016 by Mr.Eshant Jhamnani (Co-Founder), his wife Mrs. Piu Bhattacharya Jhamnani (Co-Founder), and Mr. Monjoy Bose (Co-Founder).
             </p>
 
             <p className="story-text">
@@ -60,14 +60,14 @@ const AboutPage = () => {
             </p>
 
             <p className="story-text">
-             Today, Momos Adda has grown to multiple outlets across Raipur and Chhattisgarh. We also provide franchise opportunities, turning our loyal customers into proud entrepreneurs. From training, chefs, and staff support to operational systems, we ensure our partners succeed and thrive.
+             Today, Momo's Adda has grown to multiple outlets across Raipur and Chhattisgarh. We also provide franchise opportunities, turning our loyal customers into proud entrepreneurs. From training, chefs, and staff support to operational systems, we ensure our partners succeed and thrive.
              </p>
 
             <p className="story-text">
               Our journey has not been without challenges. We faced failures, financial struggles, and setbacks. But every failure strengthened us, building a foundation of practical and theoretical knowledge that we now pass on to our franchise partners.
             </p>
             <p className="story-text">
-               At Momos Adda, we live by a simple belief: “We are all human beings first.”
+               At Momo's Adda, we live by a simple belief: “We are all human beings first.”
                We treat our employees, franchise partners, and customers with equal respect and care. We value every suggestion, every piece of feedback, and we act on it—because for us, growth is always a collective journey
             </p>
 
@@ -76,11 +76,11 @@ const AboutPage = () => {
             </p>
 
             <p className="story-text">
-              This website will continue to share the milestones, stories, and lessons from our journey. Stay connected with us, and be a part of the ever-growing Momos Adda family.
+              This website will continue to share the milestones, stories, and lessons from our journey. Stay connected with us, and be a part of the ever-growing Momo's Adda family.
             </p>
           </div>
 
-          Right: Image from Assets
+         {/*  Right: Image from Assets
           <div className="story-image-block">
             <div className="story-image-card">
               <img
@@ -94,7 +94,7 @@ const AboutPage = () => {
                 loading="lazy"
               />
             </div>
-          </div> 
+          </div>  */}
         </div>
       </section>
 
@@ -139,7 +139,7 @@ const AboutPage = () => {
                   alt="Piu Bhattachariya"
                   className="team-member-image"
                   onError={(e) => {
-                    e.target.src = '/AssetsMomosAdda/PIU BHATTACHARIYA.jpg';
+                    e.target.src = '/AssetsMomosAdda/PIU2.jpg';
                     e.target.onerror = null;
                   }}
                   loading="lazy"

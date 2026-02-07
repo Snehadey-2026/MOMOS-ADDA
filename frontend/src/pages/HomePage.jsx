@@ -19,7 +19,7 @@ const HomePage = () => {
     if (paused) return;
     const timer = setTimeout(() => {
       setIndex((prev) => (prev + 1) % slides.length);
-    }, 400000);
+    }, 40000);
     return () => clearTimeout(timer);
   }, [index, paused, slides.length]);
 

@@ -37,27 +37,50 @@ const AboutPage = () => {
             </h2>
 
             <p className="story-text">
-              MOMO&apos;S ADDA was born from a passion to bring authentic
-              Himalayan flavors to food lovers across India. Our journey began
-              with a simple mission: to serve the freshest, most delicious momos
-              that remind you of the mountains.
+             Momo's Adda was founded in 2016 by Mr.Eshant Jhamnani (Co-Founder), his wife Mrs. Piu Bhattacharya Jhamnani (Co-Founder), and Mr. Monjoy Bose (Co-Founder).
             </p>
 
             <p className="story-text">
-              Each momo is crafted with care, using traditional recipes passed
-              down through generations, combined with innovative flavors that
-              appeal to modern taste buds. From steamed to fried, from classic to
-              exotic – we offer a momo experience like no other.
+              But our story began much earlier. Since 2008, we were serving authentic Chinese cuisine under the brand name “Angel Dragon” in the mall segment. By 2010, we noticed a new trend—momos were becoming the favorite snack of youngsters and families alike. Recognizing this opportunity, we decided to experiment with a 6x6 kiosk model on High Street, bringing customers freshly prepared momos and Indo-Chinese delicacies.
             </p>
 
             <p className="story-text">
-              Today, MOMO&apos;S ADDA has become a trusted name, serving
-              thousands of happy customers who keep coming back for that perfect
-              bite of happiness.
+              We started small, investing our own funds in kiosk models, not to build a brand immediately but to listen, observe, and understand. For 2–3 years, we worked at the ground level, closely interacting with students, families, and working professionals to learn what flavors they liked, what budget suited them, and what varieties excited them the most.
+            </p>
+
+            <p className="story-text">
+             As owners, we did not stay behind the counter—we stood on the roadside, spoke directly with customers, took their feedback, and prepared food according to their taste and demand. This personal connection gave us deep insights into Raipur’s food culture and helped us create dishes that felt both innovative and authentic.
+             </p>
+
+              <p className="story-text">
+            Initially, we introduced 50+ varieties of momos, bringing flavors like Chilli Garlic Momos, Hot Garlic Momos, Kurkure Momos, and Smoky Momos. Over time, with the guidance of talented chefs and through extensive travel across the country, we transformed our menu into 100+ momos varieties, each inspired by regional tastes and unique flavor profiles. Alongside, we expanded into Indo-Chinese favorites like Pan-Fried Noodles, Singapore Noodles, Mexican Rice, American Chop Suey, and Thukpa varieties – a menu crafted to delight every customer segment.
+            </p>
+            <p className="story-text">
+              The kiosk journey taught us more than business—it taught us resilience, patience, and the value of customer trust. After years of learning and refining, we opened our first full-fledged Momos Adda outlet opposite Marine Drive in Telibandha, Raipur. The overwhelming response on day one became a milestone that still inspires us.
+            </p>
+
+            <p className="story-text">
+             Today, Momo's Adda has grown to multiple outlets across Raipur and Chhattisgarh. We also provide franchise opportunities, turning our loyal customers into proud entrepreneurs. From training, chefs, and staff support to operational systems, we ensure our partners succeed and thrive.
+             </p>
+
+            <p className="story-text">
+              Our journey has not been without challenges. We faced failures, financial struggles, and setbacks. But every failure strengthened us, building a foundation of practical and theoretical knowledge that we now pass on to our franchise partners.
+            </p>
+            <p className="story-text">
+               At Momo's Adda, we live by a simple belief: “We are all human beings first.”
+               We treat our employees, franchise partners, and customers with equal respect and care. We value every suggestion, every piece of feedback, and we act on it—because for us, growth is always a collective journey
+            </p>
+
+            <p className="story-text">
+              With this spirit, we are expanding across India and soon abroad. Our mission is to spread the love, trust, and authentic taste of Momos Adda to every corner of the world.
+            </p>
+
+            <p className="story-text">
+              This website will continue to share the milestones, stories, and lessons from our journey. Stay connected with us, and be a part of the ever-growing Momo's Adda family.
             </p>
           </div>
 
-          {/* Right: Image from Assets */}
+         {/*  Right: Image from Assets
           <div className="story-image-block">
             <div className="story-image-card">
               <img
@@ -71,7 +94,7 @@ const AboutPage = () => {
                 loading="lazy"
               />
             </div>
-          </div>
+          </div>  */}
         </div>
       </section>
 
@@ -104,7 +127,7 @@ const AboutPage = () => {
                 <div className="team-member-overlay"></div>
               </div>
               <div className="team-member-info">
-                <h3 className="team-member-name">Ishan</h3>
+                <h3 className="team-member-name">Eshant Jhamnani</h3>
                 <p className="team-member-designation">Founder & CEO</p>
               </div>
             </div>
@@ -116,7 +139,7 @@ const AboutPage = () => {
                   alt="Piu Bhattachariya"
                   className="team-member-image"
                   onError={(e) => {
-                    e.target.src = '/AssetsMomosAdda/PIU BHATTACHARIYA.jpg';
+                    e.target.src = '/AssetsMomosAdda/PIU2.jpg';
                     e.target.onerror = null;
                   }}
                   loading="lazy"

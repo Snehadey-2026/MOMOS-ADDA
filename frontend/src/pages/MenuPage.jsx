@@ -268,7 +268,7 @@ const MenuPage = () => {
         <div
                   style={{
                     width: '100%',
-                    // height: 'clamp(180px, 30vw, 200px)',
+                    height: 'clamp(180px, 30vw, 200px)',
                     overflow: 'hidden',
                     position: 'relative',
                     backgroundColor: '#f3f4f6',

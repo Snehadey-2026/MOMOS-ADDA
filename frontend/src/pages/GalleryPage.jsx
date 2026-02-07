@@ -148,7 +148,7 @@ const GalleryPage = () => {
                   <div
                     style={{
                       width: '100%',
-                      // height: 'clamp(220px, 35vw, 280px)',
+                     /* height: 'clamp(220px, 35vw, 280px)',*/
                       overflow: 'hidden',
                     }}
                   >

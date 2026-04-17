@@ -74,11 +74,11 @@ export default defineConfig({
 
   server: {
     port: 3000,
-    host: true,               // IMPORTANT: allow all hosts
+    host: true,               
     strictPort: false,
-    open: true,              // auto-open browser
+    open: true,              
     hmr: {
-      protocol: 'ws',         // use WS for localhost
+      protocol: 'ws',         
       host: 'localhost',
       port: 3000
     }

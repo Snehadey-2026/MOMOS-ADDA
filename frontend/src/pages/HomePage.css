@@ -1,0 +1,396 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+section {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #ffffff;
+  color: #111111;
+  font-family: 'Inter', sans-serif;
+}
+
+
+
+/* =========================
+   BRAND COLORS
+========================= */
+
+:root {
+  --primary: #8B0000;     /* Deep Crimson */
+  --gold: #D4AF37;        /* Luxury Gold */
+  --dark: #111111;
+  --light: #f8f8f8;
+  --border: #eaeaea;
+}
+
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero-slide {
+  width: 100%;
+  height: calc(100vh - 80px); /* subtract navbar height */
+  position: relative;
+  background: #111;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* cinematic */
+  object-position: center 20%; /* focus on food */
+}
+
+/* Elegant Navigation Arrows */
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  font-size: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-arrow:hover {
+  background: var(--gold);
+  color: #111;
+}
+
+.nav-arrow.left { left: 24px; }
+.nav-arrow.right { right: 24px; }
+
+
+
+/* =========================
+   PREMIUM HEADINGS
+========================= */
+
+.premium-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 4vw, 44px);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 18px;
+  color: var(--dark);
+  position: relative;
+}
+
+.premium-heading::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--gold);
+  margin: 10px auto 0;
+}
+
+.premium-heading.light {
+  color: #ffffff;
+}
+
+.premium-heading.light::after {
+  background: var(--gold);
+}
+
+
+
+/* =========================
+   TESTIMONIALS
+========================= */
+
+.reviews-section {
+  padding: 40px 20px 20px;
+  background: var(--light);
+  text-align: center;
+  overflow: hidden;
+}
+
+.reviews-carousel {
+  overflow: hidden;
+}
+
+.reviews-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: scrollLeft 28s linear infinite;
+  will-change: transform;
+}
+
+.reviews-carousel:hover .reviews-track {
+  animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+  from { transform: translate3d(0,0,0); }
+  to   { transform: translate3d(-50%,0,0); }
+}
+
+.review-card {
+  min-width: 240px;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  transition: transform 0.25s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+}
+
+.review-card p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.review-card span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin: 6px 0;
+}
+
+
+
+/* =========================
+   WHY CHOOSE US
+========================= */
+
+.why-section {
+  padding: 20px 20px 40px;
+  background: #ffffff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.why-carousel {
+  overflow: hidden;
+}
+
+.why-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: scrollRight 24s linear infinite;
+  will-change: transform;
+}
+
+@keyframes scrollRight {
+  from { transform: translate3d(-50%,0,0); }
+  to   { transform: translate3d(0,0,0); }
+}
+
+.why-card {
+  min-width: 180px;
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+  transition: all 0.25s ease;
+}
+
+.why-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+}
+
+
+
+/* =========================
+   CTA SECTION
+========================= */
+
+.cta-section {
+  background: var(--dark);
+  color: #ffffff;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  padding: 8px 22px;
+  border-radius: 6px;
+  background: var(--gold);
+  color: #111;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: #ffffff;
+  color: #111;
+}
+
+/* Google Badge */
+.google-badge-cta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #111;
+}
+
+.google-badge-cta img {
+  width: 16px;
+}
+
+
+
+/* =========================
+   FAQ SECTION
+========================= */
+
+.faq-section {
+  background: var(--dark);
+  color: #ffffff;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.faq-container {
+  max-width: 700px;
+  margin: auto;
+}
+
+.faq-item {
+  margin-bottom: 12px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.faq-answer-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+  padding: 0 16px;
+  font-size: 13px;
+  color: #ddd;
+}
+
+.faq-item.open .faq-answer-wrapper {
+  max-height: 120px;
+  padding-bottom: 12px;
+}
+/* FAQ SECTION - ULTRA SLIM */
+
+.faq-section {
+  padding: 25px 15px;
+  text-align: center;
+}
+
+.faq-section .premium-heading {
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+
+.faq-container {
+  max-width: 750px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Individual Item */
+.faq-item {
+  background: #1f2937;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Question Button */
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 10px 14px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Answer Wrapper */
+.faq-answer-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+/* When Open */
+.faq-item.open .faq-answer-wrapper {
+  max-height: 120px;
+}
+
+.faq-answer-wrapper p {
+  padding: 8px 14px 12px;
+  margin: 0;
+  font-size: 13px;
+  color: #d1d5db;
+  line-height: 1.4;
+}

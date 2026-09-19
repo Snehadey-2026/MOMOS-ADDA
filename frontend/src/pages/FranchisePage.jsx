@@ -65,7 +65,7 @@ const FranchisePage = () => {
   };
 
   return (
-    <div style={{ marginTop: "80px" }}>
+    <div>
 
       {/* HERO SECTION */}
       <section

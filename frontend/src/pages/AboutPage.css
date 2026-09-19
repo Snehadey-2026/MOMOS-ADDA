@@ -3,7 +3,6 @@
 /* --------- Base Layout --------- */
 
 .about-container {
-  margin-top: 80px; /* keeps clear of fixed navbar */
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
   color: #111827;

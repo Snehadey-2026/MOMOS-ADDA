@@ -367,7 +367,7 @@ const MenuPage = () => {
   );
 
   return (
-    <div data-testid="menu-page" style={{ marginTop: '80px' }}>
+    <div data-testid="menu-page">
       {/* Hero Section */}
       <section
         data-testid="menu-hero"

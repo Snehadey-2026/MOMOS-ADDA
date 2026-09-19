@@ -64,7 +64,7 @@ const FeedbackPage = () => {
   };
 
   return (
-    <div data-testid="feedback-page" style={{ marginTop: "80px" }}>
+    <div data-testid="feedback-page">
       {/* HERO SECTION */}
       <section
         data-testid="feedback-hero"

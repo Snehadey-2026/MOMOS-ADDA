@@ -42,7 +42,7 @@ const GalleryPage = () => {
   ];
 
   return (
-    <div data-testid="gallery-page" style={{ marginTop: '80px' }}>
+    <div data-testid="gallery-page">
       {/* Hero Section */}
       <section
         data-testid="gallery-hero"

@@ -25,7 +25,7 @@ const app = express();
 /* -------------------- CORS -------------------- */
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
@@ -237,8 +237,10 @@ app.use("/api", router);
 
 /* -------------------- Server -------------------- */
 const PORT = process.env.PORT || 3300;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on port ${PORT}`);
+});
 process.on("SIGINT", async () => {
   await connection.close();
   process.exit(0);
